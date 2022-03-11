@@ -26,7 +26,7 @@ public class WebController {
  		model.addAttribute("listaEmp", empleadoService.listar());
  		model.addAttribute("listaEmpConE", empleadoService.listarFiltroNombre("e"));
  		model.addAttribute("listaJPA", empleadoService.listarConJPA(2, "%o%"));
- 		model.addAttribute("listaEmpNombreExacto", empleadoService.filtrarCuyoNombreEs("Rocio"));
+ 		model.addAttribute("listaEmpNombreExacto", empleadoService.filtrarCuyoNombreEs("Rocío"));
  		return "listarDeEmpleados";
  	}
  	

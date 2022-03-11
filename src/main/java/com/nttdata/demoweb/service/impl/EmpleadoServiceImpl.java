@@ -40,6 +40,11 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		// TODO Auto-generated method stub
 		return repoJPA.listarCuyoNombreEs(cad);
 	}
+
+	@Override
+	public Empleado inserta(Empleado emp) {
+		return repoJPA.save(emp);
+	}
 	
 	
 

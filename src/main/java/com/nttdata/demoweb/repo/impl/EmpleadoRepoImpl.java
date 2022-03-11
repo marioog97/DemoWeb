@@ -12,24 +12,23 @@ import com.nttdata.demoweb.repo.EmpleadoRepo;
 import com.nttdata.demoweb.repo.entity.Empleado;
 
 //@Repository
-public class EmpleadoRepoImpl implements EmpleadoRepo{
+public class EmpleadoRepoImpl implements EmpleadoRepo {
 
-	 
-		private static Logger LOG = org.slf4j.LoggerFactory.getLogger(EmpleadoRepoImpl.class);
-		
-		 @PersistenceContext
-			EntityManager entityManager;
-		 
-		 @Override
-		    public List<Empleado> listarCuyoNombreContiene(String texto_nombre) {
-		        Query query = entityManager.createNativeQuery("SELECT * FROM empleado " +
-		                "WHERE nombre LIKE ?", Empleado.class);
-		        query.setParameter(1, "%" + texto_nombre + "%");
-		        return query.getResultList();
-			}
-		@Override
-		public void registrar(String nombre) {
-			LOG.info("Se ha saludado al empleado: "+nombre);
-	
-}
+	private static Logger LOG = org.slf4j.LoggerFactory.getLogger(EmpleadoRepoImpl.class);
+
+	@PersistenceContext
+	EntityManager entityManager;
+
+	// @Override
+	public List<Empleado> listarCuyoNombreContiene(String texto_nombre) {
+		Query query = entityManager.createNativeQuery("SELECT * FROM empleado " + "WHERE nombre LIKE ?",
+				Empleado.class);
+		query.setParameter(1, "%" + texto_nombre + "%");
+		return query.getResultList();
+	}
+
+	@Override
+	public void registrar(String nombre) {
+		LOG.info("Se ha saludado al empleado: " + nombre);
+	}
 }
