@@ -61,3 +61,7 @@ Wrong user name or password [28000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 55 more
+2022-03-11 09:11:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "NTO[*] EMPLEADO (ID, NOMBRE, APELLIDOS) SELECT 1, 'Rocío', 'De la O' FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM EMPLEADO WHERE ID = 1)"
+Syntax error in SQL statement "NTO[*] EMPLEADO (ID, NOMBRE, APELLIDOS) SELECT 1, 'Rocío', 'De la O' FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM EMPLEADO WHERE ID = 1)"; SQL statement:
+nto empleado (id, nombre, apellidos) select 1, 'Rocío', 'De la O' from dual where not exists (select 1 from empleado where id = 1) [42000-200]
