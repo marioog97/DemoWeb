@@ -11,8 +11,10 @@
 		MENÚ:
 		<li><a href="/app/saludo">Saluda</a></li>
 		<li><a href="/app/saludo?name=Mario">Salúdame</a></li>
-		<li><a href="/app/listarEmpleados">Lista empleados</a></li>
+		<li th:if="${usuario.rol.rol == 'ADMIN'}"><a href="/app/listarEmpleados">Lista empleados</a></li>
 		<li><a href="/app/h2-console">h2-console</a></li>
 	</ul>
 </body>
+ <h5 th:inline="text">Hola '[[${usuario.nombreYapellidos}]]'  ([[${usuario.username}]]), 
+	tu rol es [[${usuario.rol.rol}]]. </h5>
 </html>
